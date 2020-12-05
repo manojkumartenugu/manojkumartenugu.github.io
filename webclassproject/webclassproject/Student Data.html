@@ -1,0 +1,108 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- CSS -->
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <link rel="stylesheet" type="text/css" href="css/student_data.css">
+    <title>Student Data</title>
+
+
+<script type="text/javascript">
+//<![CDATA[
+var decode = function ( text ) {
+    text = text.replace(/\+/g, " ");
+    text = text.replace(/%[a-fA-F0-9]{2}/g, 
+        function ( text ) {
+            return String.fromCharCode( "0x" + text.substr(1,2));
+        }
+    );
+    return text;
+}
+    
+var display_data = function () {
+
+    var query = location.search.replace("?", "");
+    if ( query == "" ) return;
+    
+    var fields = query.split("&");
+    
+    if ( fields.length == 0 ) {
+        document.write("<p>No data was submitted.</p>");
+    } else {
+	     document.write("");
+        document.write("<table class='tableStyle'>");
+        var field_parts;
+        for ( var i = 0; i < fields.length - 1; i++ ) {
+            field_parts = fields[i].split("=");
+            field_parts[0] = decode( field_parts[0] );
+            field_parts[1] = decode( field_parts[1] );
+			console.log(field_parts[0]);
+            document.write("<tr class='tr'>");
+            document.write("<td class='td'>" + field_parts[0] + "</td>");
+            document.write("<td class='td'>" + field_parts[1] + "</td>");
+            document.write("</tr>");
+        }
+        document.write("</table>");
+    }
+}
+//]]>
+</script>
+</head>
+
+<body>
+  <header>
+    <div class="navbar-header">
+
+      <a href="home.html" class="logo"><img src="pics/aumlogowhite.png"></a>
+
+        <div class="search">
+            <script async src="https://cse.google.com/cse.js?cx=000888210889775888983:pqb3ch1ewhg"></script>
+            <div class="gcse-searchbox-only" data-resultsUrl="https://googlecustomsearch.appspot.com/elementv2/two-page_results_elements_v2.html?query=test"></div>          
+        </div>
+
+      <div class="navbar-header-right">
+        <a href="home.html">Home</a>
+        <a href="Computer Science.html">Computer Science</a>
+        <a href="Teaching Assistant Application.html">Teaching Assistant</a>
+        <a href="Calculator.html">GPA Calculator</a>
+        <a href="scholarship.html">Scholarship</a>
+		<a href="contact.html">Contact Us</a>
+      </div>
+    </div>
+  </header>
+
+  <img src="pics/IMG-20200722-WA0067.png" class="cover-img">
+
+    <div class="display">
+        <h1>Student Data</h1>
+        <script>display_data();</script>
+          <br>
+          <br>
+          <a href="Teaching Assistant Application.html">Back to Teaching Assistant</a>
+          <br>
+          <br>
+         
+    </div>
+
+
+    
+
+  <div class="extra"></div>
+
+  <div class="footer">
+    <img src="pics/mail.png">
+    <img src="pics/fb.png">
+    <img src="pics/tw.png">
+    <img src="pics/insta.png">
+    <img src="pics/map.png">
+  <p>
+    Manoj <br>
+    Auburn University at Montgomery&#169;2020 <br>
+    678-276-5635
+  </p>
+  </div>
+</body>
+</html>

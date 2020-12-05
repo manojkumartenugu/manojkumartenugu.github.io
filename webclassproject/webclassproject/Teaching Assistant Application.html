@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- CSS -->
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <link rel="stylesheet" type="text/css" href="css/teacher_assistant.css">
+
+  <title>Auburn University at Montgomery</title>
+</head>
+<body>
+
+  <header>
+    <div class="navbar-header">
+
+      <a href="home.html" class="logo"><img src="pics/aumlogowhite.png"></a>
+
+        <div class="search">
+            <script async src="https://cse.google.com/cse.js?cx=000888210889775888983:pqb3ch1ewhg"></script>
+            <div class="gcse-searchbox-only" data-resultsUrl="https://googlecustomsearch.appspot.com/elementv2/two-page_results_elements_v2.html?query=test"></div>          
+        </div>
+
+      <div class="navbar-header-right">
+        <a href="home.html">Home</a>
+        <a href="Computer Science.html">Computer Science</a>
+        <a class="active" href="">Teaching Assistant</a>
+        <a href="Calculator.html">GPA Calculator</a>
+        <a href="scholarship.html">Scholarship</a>
+		<a href="contact.html">Contact Us</a>
+      </div>
+    </div>
+  </header>
+
+  <img src="pics/teachingassistnat.jpg" class="cover-img">
+
+<form class="formStyle" name="myform" action="Student Data.html" method="get">
+  <h2>Personal Information</h2>
+    <label for="firstname">First Name:</label>
+    <input type="text" name="First Name" id="firstname" title="Mandatory" required="" placeholder="First Name"><br>
+    <label for="lastname">Last Name:</label>
+    <input type="text" name="Last Name" id="lastname" title="Mandatory" required="" placeholder="Last Name"><br>
+    <label for="id">ID:</label>
+    <input type="text" name="ID" id="id" title="Mandatory" required="" placeholder="Student ID"><br>
+    <label for="gender">Gender:</label>
+    <input type="text" name="Gender" id="gender" title="Gender" placeholder="Gender"><br>
+    
+    <h2>Academic Information</h2>
+    <label for="gpa">GPA:</label>
+    <input type="text" id="GPA" name="GPA" title="GPA" placeholder="GPA"><br> 
+
+    <h2>Other Information</h2>
+    <label for="submissiondate">Submission Date:</label>
+    <input type="date" id="date" name="Submission Date"><br> <br> 
+
+    <label for="comment">Comment:</label>
+    <textarea rows="4" cols="22" name="Comment" placeholder="Enter comment here..." title="Comment"></textarea><br><br>
+  
+    <input type="submit" name="button" id="button" class="button1" value="Submit">
+    <input type="reset" name="reset" id="reset" class="button2"> 
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+</form>
+
+<script>
+  function setInputFilter(textbox, inputFilter) {
+    ["input", "keydown", "keyup", "mousedown", "mouseup", "select", "contextmenu", "drop"].forEach(function (event) {
+      textbox.addEventListener(event, function () {
+        if (inputFilter(this.value)) {
+          this.oldValue = this.value;
+          this.oldSelectionStart = this.selectionStart;
+          this.oldSelectionEnd = this.selectionEnd;
+        } else if (this.hasOwnProperty("oldValue")) {
+          this.value = this.oldValue;
+          this.setSelectionRange(this.oldSelectionStart, this.oldSelectionEnd);
+        } else {
+          this.value = "";
+        }
+      });
+    });
+  }
+  setInputFilter(document.getElementById("GPA"), function (value) {
+    return /^\d*$/.test(value);
+  });
+</script>
+
+  <div class="extra"></div>
+
+  <div class="footer">
+    <img src="pics/mail.png">
+    <img src="pics/fb.png">
+    <img src="pics/tw.png">
+    <img src="pics/insta.png">
+    <img src="pics/map.png">
+    <p>
+      Manoj <br>
+      Auburn University at Montgomery&#169;2020 <br>
+      678-276-5635
+    </p>
+  </div>
+
+
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="owl-carousel/owl.carousel.min.js"></script>
+    <script src="owl-carousel/owl-carousel-thumb.min.js"></script>
+    <script src="js/jquery.ajaxchimp.min.js"></script>
+
+    <script src="js/theme.js"></script>
+
+</body>
+</html>
+
+

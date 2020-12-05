@@ -1,0 +1,27 @@
+/* Intro */
+.description
+{
+  margin: 3% 10% 5% 10%;
+  text-align: justify;
+}
+
+.tableStyle
+{
+  width: 100%;
+  text-align: center;
+  border-collapse: collapse;
+  margin-top: 5%;
+  margin-bottom: 5%;
+}
+
+.thStyle, .trStyle, .tdStyle {
+  border: 2px solid #FF4814;
+  padding: 10px;
+}
+
+.thStyle
+{
+  background-color: #FF4814;
+  border: 2px solid white;
+  color: white;
+}
